@@ -1,18 +1,10 @@
 # fetch_google
 opens all links in first page that appear in a google search results in separate tabs.
        
-        import bs4,requests,webbrowser,sys
+To Run the script.
 
-
-        str=' '.join(sys.argv[1:])
-        webbrowser.open('https://www.google.com/search?q='+str)
-        req=requests.get('https://www.google.com/search?q='+str)
-
-        req.raise_for_status()
-
-        soup=bs4.BeautifulSoup(req.text)
-        matches=soup.select('.r a')
-
-
-        for l in matches:
-            webbrowser.open('https://www.google.com'+l.get('href'))
+1. Clone the repository
+        git clone https://github.com/rrjkr32/fetch_google.git
+        
+2. Go to the fetch_google directory and Run the script as:
+        python . <search text>
